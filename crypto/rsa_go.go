@@ -8,6 +8,7 @@ import (
 	"crypto/rsa"
 	"crypto/x509"
 	"errors"
+	"fmt"
 	"io"
 	"sync"
 
@@ -31,6 +32,7 @@ type RsaPublicKey struct {
 
 // GenerateRSAKeyPair generates a new rsa private and public key
 func GenerateRSAKeyPair(bits int, src io.Reader) (PrivKey, PubKey, error) {
+	panic(fmt.Errorf("GenerateRSAKeyPair called"))
 	if bits < MinRsaKeyBits {
 		return nil, nil, ErrRsaKeyTooSmall
 	}

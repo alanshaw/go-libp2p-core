@@ -4,6 +4,7 @@ package crypto
 
 import (
 	"errors"
+	"fmt"
 	"io"
 
 	openssl "github.com/libp2p/go-openssl"
@@ -21,6 +22,7 @@ type RsaPublicKey struct {
 
 // GenerateRSAKeyPair generates a new rsa private and public key
 func GenerateRSAKeyPair(bits int, _ io.Reader) (PrivKey, PubKey, error) {
+	panic(fmt.Errorf("GenerateRSAKeyPair called"))
 	if bits < MinRsaKeyBits {
 		return nil, nil, ErrRsaKeyTooSmall
 	}
